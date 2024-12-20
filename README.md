@@ -27,20 +27,49 @@ The next flip-flop need only “recognize” that the first flip-flop’s Q outp
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
 **Procedure**
+1.Type the Verilog program in Quartus Prime to implement the 4 bit synchronous up counter and validate functionality.
 
-/* write all the steps invloved */
+2.Compile and run the program to ensure the design is error-free.
+
+3.Generate the RTL schematic to visualize the cascading D flip-flop connections and save it for documentation.
+
+4.Create nodes for the serial input (SI), clock (CLK), and serial output (SO) to observe the shifting process during simulation.
+
+5.Simulate the design for different input serial data patterns and observe the timing diagrams.
+
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
-*/
+Developed by:MOHAMMAD SUHAEL
+RegisterNumber: 24007235
+
+```
+module syn_counter(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out+1;
+end
+endmodule
+
+```
+
 
 **RTL LOGIC UP COUNTER**
+![Screenshot 2024-12-20 060622](https://github.com/user-attachments/assets/cd7c08e2-43a8-4337-9c4f-f7c3fddadef9)
+
 
 **TIMING DIAGRAM FOR IP COUNTER**
+![Screenshot 2024-12-20 060635](https://github.com/user-attachments/assets/2c28b73f-c4e0-4584-a8a9-d3ecaa8c97f0)
 
 **TRUTH TABLE**
+![Screenshot 2024-12-20 060645](https://github.com/user-attachments/assets/9495e041-0b01-4283-b37b-070bd06fd541)
+
 
 **RESULTS**
+Thus, the 4 bit synchronous up counter and validate functionality is implemented using Verilog, and its functionality is validated with the truth table and timing diagrams
